@@ -1,0 +1,72 @@
+<html>
+<head>
+
+<title>HESAP MAKİNESİ</title>
+        <style>
+        input[type="number"], button {
+            width: 150px; 
+            height: 40px;  
+            margin: 5px; 
+            padding: 10px; 
+            font-size: 16px; 
+        }   
+         button {
+            border-radius: 20px; 
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+        }
+
+            button:hover {
+            background-color: #131c14; 
+        }
+    
+       
+        </style>
+</head>
+<body>
+  <div class="container"> 
+    
+        <div id="sonuc">Sonuç burada görünecek</div>
+        <input id="sayi1" type="number"/>
+        <input id="sayi2" type="number">
+        <button onclick="hesapla('+')">TOPLAMA İşlemi</button>
+        <button onclick="hesapla('-')">ÇIKARMA İşlemi</button>
+        <button onclick="hesapla('*')">ÇARPMA İşlemi</button>
+        <button onclick="hesapla('/')">BÖLME İşlemi</button>
+        
+         </div>
+    </div>    
+        <script>
+            var deneme = "Bölen '0' olamaz " ;
+            alert(deneme);
+
+           var sayi1 =document.getElementById("sayi1");
+          var sayi2 =document.getElementById("sayi2");
+         var sonuc = document.getElementById("sonuc");
+         function hesapla(type){
+            var sonucText = "" ;
+
+            switch(type){
+                case "+":
+                    sonucText = Number(sayi1.value) + Number(sayi2.value);
+                    break ;
+                case "-":
+                    sonucText = Number(sayi1.value) - Number(sayi2.value);
+                    break;
+                case "*":
+                    sonucText = Number(sayi1.value) * Number(sayi2.value);
+                    break ;
+                case "/":
+                    sonucText = Number(sayi1.value) / Number(sayi2.value);
+                    break ;
+            }
+            sonuc.innerHTML =sonucText ;           
+        }       
+    </script>
+   </div>
+</body> 
+</html>
